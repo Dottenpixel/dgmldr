@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cities>
+	<city ref="atl">
+		<title>Atlanta</title>
+		<lat>33.75</lat>
+		<long>-84.39</long>
+	</city>
+	<city ref="bos">
+		<title>Boston</title>
+		<lat>42.35</lat>
+		<long>-71.06</long>
+	</city>
+	<city ref="chi">
+		<title>Chicago</title>
+		<lat>41.88</lat>
+		<long>-87.81</long>
+	</city>
+	<city ref="den">
+		<title>Denver</title>
+		<lat>39.74</lat>
+		<long>-104.99</long>
+	</city>
+	<city ref="det">
+		<title>Detroit</title>
+		<lat>42.39</lat>
+		<long>-83.14</long>
+	</city>
+	<city ref="hou">
+		<title>Houston</title>
+		<lat>29.76</lat>
+		<long>-95.37</long>
+	</city>
+	<city ref="la">
+		<title>Los Angeles</title>
+		<lat>34.03</lat>
+		<long>-118.24</long>
+	</city>
+	<city ref="mil">
+		<title>Milwaukee</title>
+		<lat>43.04</lat>
+		<long>-87.91</long>
+	</city>
+	<city ref="min">
+		<title>Minneapolis</title>
+		<lat>44.98</lat>
+		<long>-93.26</long>
+	</city>
+	<city ref="ny">
+		<title>New York</title>
+		<lat>40.73</lat>
+		<long>-73.97</long>
+	</city>
+	<city ref="okc">
+		<title>Oklahoma City</title>
+		<lat>35.47</lat>
+		<long>-97.52</long>
+	</city>
+	<city ref="phi">
+		<title>Philadelphia</title>
+		<lat>39.95</lat>
+		<long>-75.16</long>
+	</city>
+	<city ref="pho">
+		<title>Phoenix</title>
+		<lat>33.43</lat>
+		<long>-112.05</long>
+	</city>
+	<city ref="pit">
+		<title>Pittsburgh</title>
+		<lat>40.44</lat>
+		<long>-80</long>
+	</city>
+	<city ref="pdx">
+		<title>Portland</title>
+		<lat>45.52</lat>
+		<long>-122.68</long>
+	</city>
+	<city ref="pro">
+		<title>Providence</title>
+		<lat>41.82</lat>
+		<long>-71.41</long>
+	</city>
+	<city ref="sac">
+		<title>Sacramento</title>
+		<lat>38.58</lat>
+		<long>-121.49</long>
+	</city>
+	<city ref="slc">
+		<title>Salt Lake City</title>
+		<lat>40.75</lat>
+		<long>-111.89</long>
+	</city>
+	<city ref="sd">
+		<title>San Diego</title>
+		<lat>32.71</lat>
+		<long>-117.16</long>
+	</city>
+	<city ref="sf">
+		<title>San Francisco</title>
+		<lat>37.70</lat>
+		<long>-122.32</long>
+	</city>
+	<city ref="sea">
+		<title>Seattle</title>
+		<lat>47.60</lat>
+		<long>-122.33</long>
+	</city>
+	<city ref="stl">
+		<title>St. Louis</title>
+		<lat>38.63</lat>
+		<long>-90.21</long>
+	</city>
+	<city ref="tam">
+		<title>Tampa</title>
+		<lat>27.95</lat>
+		<long>-82.49</long>
+	</city>
+	<city ref="wdc">
+		<title>Washington D.C.</title>
+		<lat>38.9</lat>
+		<long>-77.02</long>
+	</city>
+</cities>

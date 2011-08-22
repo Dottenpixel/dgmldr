@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Dottenpixel Interactive Showcase</title>
+<link rel="stylesheet" href="css/showcase.css" type="text/css"  media="screen" />
+<script src="js/jquery-1.2.5.min.js" type="text/javascript"></script>
+<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
+<script src="js/jquery.dimensions.min.js" type="text/javascript"></script>
+<script src="js/jquery.dropshadow.js" type="text/javascript"></script>
+<script src="js/jquery.scrollTo-min.js" type="text/javascript"></script>
+  
+<script type="text/javascript">
+function rePosBG() {
+	$("body").css("backgroundPosition", "90% " + ($(window).height() * .9 - 186) + "px" );
+}
+
+function closeCurrent() {
+	$("#swfFrame").remove();
+	$("#swfFrameClose").remove();
+	$("div.currentLink").remove();
+	$("a").removeClass("currentLink");	
+}
+
+function makeSWFFrame(a, wAsset) {
+	var swfPath = "assets/banners/";
+	var swfURL = swfPath + wAsset + ".swf";
+	closeCurrent();	
+	$(function() {
+  		 $.ajax({
+			 type: "GET",
+			 url:  "ajax/swfheader_xml.php",// "ajax/test.xml",
+			 data: {swf: "../" + swfURL},
+			 dataType: "xml",
+			 success: function(xml) {
+				 $(xml).find('swf').each(function(){
+	
+					 var swfWidth = $(this).attr('width');
+					 var swfHeight = $(this).attr('height');
+					 //var name_text = $(this).find('title').text()
+				
+					/*
+					$('<h1></h1>')
+					 .html(swfWidth + ' x ' + swfHeight)
+					 .appendTo('body');
+					*/
+					a.addClass("currentLink");
+					a.after('<div class="currentLink"><iframe id="swfFrame" width="'+ swfWidth + '" height="'+ swfHeight + '" scrolling="no" frameborder="0" src="' + swfURL + '"></iframe> <a id="swfFrameClose" title="CLOSE"><img src="img/btn_close.gif"></a></div>');
+					$.scrollTo( $(a), 250);
+					
+					$("#swfFrameClose").click(function() {
+						closeCurrent();	
+					});
+				 }); //close each(
+			 },
+			 error: function(XMLHttpRequest, textStatus, errorThrown) {
+				 $('<h1></h1>')
+					 .html("XMLHttpRequest: " + XMLHttpRequest + ", textStatus: " + textStatus + ", errorThrown: " + errorThrown)
+					 .appendTo('body');
+			 }
+		 }); //close $.ajax(
+     }); //close $(
+}
+
+function makeSiteFrame(a, wURL) {
+	closeCurrent();	
+	a.addClass("currentLink");
+	a.after('<div class="currentLink"><iframe id="siteFrame" width="'+ '1100' + '" height="'+ $(window).height() + '" scrolling="auto" frameborder="0" src="' + wURL + '"></iframe> <span><a id="siteFrameBreak" title="BREAK FRAME" href="' + wURL + '" target="_blank"><img src="img/btn_break_frame.gif"></a> <a id="swfFrameClose" title="CLOSE"><img src="img/btn_close.gif"></a></span></div>');
+	$.scrollTo( $(a), 250);
+	$("#swfFrameClose, #siteFrameBreak").click(function() {
+		closeCurrent();	
+	});
+}
+
+
+$(document).ready(function(){
+	rePosBG();
+});
+
+</script>
+</head>
+
+<body onscroll="rePosBG();">
+<div id="mainCtn">
+<h1>Banners</h1>
+<!--
+<h2>AOL</h2>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'AOL__eGreeting_A')">eGreeting A</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'AOL__eGreeting_B')">eGreeting B</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'AOL__eGreeting_C')">eGreeting C</a>
+
+<h2>Vonage</h2>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'Vonage__Illustrations')">Illustrations</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'Vonage__Intl_Latin')">Intl Latin</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'381_von_split_728x90')">Split</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'384_von_strait_300x250')">Brand</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'387-VonageNewYear_A_300x250')">Happy New Year</a>
+
+<h2>WorldSpace</h2>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'WorldSpace__Madonna_Banner')">Madonna Live</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'WorldSpace__Fox_Sports')">Fox Sports</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'WorldSpace__Live8_Banner')">Live 8</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'WorldSpace__World_Cup_Site_Banner')">World Cup</a>
+-->
+<h2>HP</h2>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07230_hub_300x250')">Hub</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07274_phot_300x250')">Photo</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07292_time_300x250')">Timeline</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07071_bund_300x250')">Rockstar Bundle</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'HP__RERockstar_Bundle')">Rockstar Competition (Audio)</a>
+
+<h2>Microsoft : Visual Studio</h2>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs06322_team_300x250')">Team System</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs06322_bull_336x280')">Bull&rsquo;s Eye</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs06322_ajax_336x280')">Ajax</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs06322_lost_300x250')">Lost in Space</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs06322_trea_300x250')">Treasure Chest</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07178_pupp_336x280')">Puppy</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs06322_laun_exp_300x250')">Launch Party (Expanding)</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07178_disc_exp_300x250')">Disco (Expanding)</a>
+
+<h2>Microsoft</h2>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07245_traf_336x280')">Traffic</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07344_hurd_336x280')">Hurdles</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07129_skel_336x280')">Skeleton</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07129_skel_336x280')">Zombies</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'mrs07358_home_300x250')">Zune : MySpace Home</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'Microsoft__MBS')">Keeping Up</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'Microsoft__MBS_turn')">Turn</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'Microsoft__MSNDirect_mpu')">Watch</a>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'Microsoft__MSNDirect_OverthePage')">Watch (Over-the-page)</a>
+
+<h1>MIcro Sites</h1>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'https://connect.charter.com/laptop/quiz.aspx')">Charter Back2School Pop Quiz</a>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://www.charter.com/more')">Charter Get More Save More Quiz</a>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://www.charter.com/tv')">Charter TV Spots Showcase</a>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://www.charter.com/radio')">Charter Radio Spots Showcase</a>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://connect.charter.com/yourlife/')">Charter Bring Your ____ to Life Contest</a>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://dev.creativelift.net/Charter/28days/')">Charter 28 Days of Savings</a>
+
+<h1>Corporate Sites</h1>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://chartercom.cl-sf.com/Design/visitors/home.html')">Charter Communications</a>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://www.redtowerfunding.com/')">RedTower Funding</a>
+<!--
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://www.chrisragalie.com/')" >Chris Ragalie Photography</a>
+
+<h1>Demos</h1>
+<a href="#" class="swfLink" onclick="makeSWFFrame($(this),'Kenamea__Narrated_Demo')">Kenamea</a></div>
+<a href="#" class="siteLink" onclick="makeSiteFrame($(this),'http://www.chrisragalie.com/')" >Chris Ragalie Photography</a>
+-->
+
+
+</body>
+</html>
