@@ -21,7 +21,7 @@
          url('aauxpro-black-webfont.woff') format('woff'),
          url('aauxpro-black-webfont.ttf') format('truetype'),
          url('aauxpro-black-webfont.svg#AauxProBlackRegular') format('svg');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 
 }
@@ -33,7 +33,7 @@
          url('aauxpro-bold-webfont.woff') format('woff'),
          url('aauxpro-bold-webfont.ttf') format('truetype'),
          url('aauxpro-bold-webfont.svg#AauxProBoldRegular') format('svg');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 
 }
