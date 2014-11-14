@@ -1,0 +1,85 @@
+@charset "UTF-8";
+::-moz-selection {
+  background: #ff7b00;
+  color: #fff;
+  text-shadow: none; }
+
+::selection {
+  background: #ff7b00;
+  color: #fff;
+  text-shadow: none; }
+
+body, ul li li li, ul li em {
+  font-family: aaux-next, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  font-style: normal;
+  letter-spacing: 0px; }
+
+body {
+  background: #999 url(../img/bg_resume.jpg) repeat;
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #999;
+  text-decoration: none; }
+  a:hover {
+    color: #ff7b00;
+    text-decoration: underline; }
+
+#main {
+  background: white;
+  width: 750px;
+  padding: 60px 80px;
+  margin: 0 auto; }
+
+h1 {
+  font-family: aaux-next, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 18px; }
+  h1 strong {
+    font-size: 14px;
+    margin: 0 0 0 12px; }
+  h1 em {
+    font-family: aaux-next, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0 0 0 12px;
+    font-style: normal; }
+
+ul {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 18px; }
+  ul li {
+    font-family: aaux-next, Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin: 18px 0 8px;
+    position: relative;
+    page-break-inside: avoid; }
+    ul li ul {
+      margin: 6px 0 12px; }
+    ul li li {
+      font-family: aaux-next, Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 16px;
+      margin: 8px 0; }
+      ul li li li {
+        display: block;
+        margin: 4px 0 4px 18px;
+        padding: 0 110px 0 0; }
+        ul li li li:before {
+          content: "•]";
+          position: absolute;
+          left: -18px;
+          letter-spacing: 3px; }
+    ul li em {
+      display: block;
+      margin-left: 8px; }

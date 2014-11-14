@@ -1,0 +1,104 @@
+//colors
+$color-gray: #999;
+$color-orange: #ff7b00;
+$color-red-orange: #e94009;
+$color-deep-orange: #c83803;
+
+//fonts
+$font_0: aaux-next;
+$font_1: Arial;
+$font_2: sans-serif;
+
+::-moz-selection { background: $color-orange; color: #fff; text-shadow: none; }
+::selection { background: $color-orange; color: #fff; text-shadow: none; }
+
+@mixin font($weight: 400) {
+	font-family: $font_0, $font_1, $font_2;
+	font-weight: $weight;
+}
+//@extend-elements
+//original selectors
+//ul li li li, ul li em
+%base-font {
+	@include font();
+	font-size: 14px;
+	line-height: 18px;
+	font-style: normal;
+	letter-spacing: 0px;
+}
+
+body {
+	@extend %base-font;
+	background: $color-gray url(../img/bg_resume.jpg) repeat;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: $color-gray;
+	text-decoration: none;
+	&:hover {
+		color: $color-orange;
+		text-decoration: underline;
+	}
+}
+#main {
+	background: white;
+	width: 750px;
+	padding: 60px 80px;
+	margin: 0 auto;
+}
+h1 {
+	@include font(700);
+	letter-spacing: 1px;
+	font-size: 18px;
+	strong {
+		font-size: 14px;
+		margin: 0 0 0 12px;
+	}
+	em {
+		@include font();
+		font-size: 12px;
+		margin: 0 0 0 12px;
+		font-style: normal;
+	}
+}
+ul {
+	clear: both;
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 18px;
+	li {
+		@include font(800);
+		letter-spacing: 1px;
+		font-size: 14px;
+		margin: 18px 0 8px;
+		position: relative;
+		page-break-inside: avoid;
+		ul {
+			margin: 6px 0 12px;
+		}
+		li {
+			@include font(700);
+			letter-spacing: 1px;
+			font-size: 16px;
+			margin: 8px 0;
+			li {
+				@extend %base-font;
+				display: block;
+				margin: 4px 0 4px 18px;
+				padding: 0 110px 0 0;
+				&:before {
+					content: "•]";
+					position: absolute;
+					left: -18px;
+					letter-spacing: 3px;
+				}
+			}
+		}
+		em {
+			@extend %base-font;
+			display: block;
+			margin-left: 8px;
+		}
+	}
+}
