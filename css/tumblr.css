@@ -131,3 +131,32 @@ h1 {
 #credit {
 	display: none;
 }
+.post_thumb .icon {
+	background-color: transparent;
+}
+.post_thumb .inner {
+	position: absolute;
+	z-index: 4;
+	text-shadow: 2px 2px 2px rgba(0,0,0,.66);
+}
+.post_thumb .photoset .inner h1 {
+	line-height: 18px !important;
+	display: none;
+}
+
+.post_thumb .link .inner h1,
+.post_thumb .video .inner h1 {
+	line-height: 18px !important;
+	color: rgba(255,255,255,.66);
+	display: block;
+}
+
+.post_thumb .inner p {
+	display: none;
+}
+.post_thumb.hover .icon {
+	background-color: rgba(0,0,0,.33);
+}
+.post_thumb.hover .inner h1 {
+	color: rgba(255,255,255,1.0);
+}
